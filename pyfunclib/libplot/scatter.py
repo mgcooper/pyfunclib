@@ -1,8 +1,8 @@
 """
 Author: Matt Cooper (https://github.com/mgcooper)
-scatter1to1.py (c) 2022, Matt Cooper
-Desc: description
-Created:  2022-10-02T20:25:29.554Z
+scatter.py (c) 2022, Matt Cooper
+Desc: scatter plot utilities
+Created:  2022-10-01T02:03:52.579Z
 """
 
 import matplotlib.pyplot as plt
