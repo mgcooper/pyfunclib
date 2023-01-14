@@ -3,7 +3,7 @@ Author: Matt Cooper (https://github.com/mgcooper)
 geoutils.py (c) 2022, Matt Cooper
 Desc: a set of python utilities to interact with geodatframes
 Created:  2022-09-30T18:54:45.893Z
-Modified:  2022-10-11T18:20:49.081Z
+Modified:  2022-10-15T23:59:50.827Z
 """
 
 import os
@@ -14,6 +14,17 @@ import geopandas as gp
 from shapely.geometry import Point, Polygon, MultiPolygon
 from shapely.validation import explain_validity
 from shapely.validation import make_valid
+
+
+# # these were in a text file
+# # make shapely points out of the X and Y coordinates
+# # arr-df is a pandas dataframe
+# point_data = [Point(xy) for xy in zip(arr_df.X, arr_df.Y)]
+
+# # define a shapely polygon from X and Y coordinates of the shapely points
+# polygo = Polygon([[p.x, p.y] for p in arr_gpd.geometry])
+
+
 
 #----------------------------------------------------------------------
 #   make geometry valid
@@ -75,7 +86,7 @@ def gdfcoordinatelist(gdf,flatten=False):
             # not sure if this will work
             coords = np.array(feature.geometry.coords)
         elif all(gdf.geom_type=='Polygon'):
-            coords = np.array(Polygon(feature['geometry']).exterior.coords)  
+            coords = np.array(Polygon(feature['geometry']).exterior.coords)
         
         coordlist.append(coords)
 
